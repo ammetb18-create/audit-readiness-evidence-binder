@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Audit Readiness Evidence Binder | América Trujillo</title>
+  <style>
+    :root {
+      --bg: #0b1220;
+      --card: #111c2f;
+      --card2: #16243a;
+      --text: #e8f1ff;
+      --muted: #9fb3c8;
+      --accent: #38e8d8;
+      --accent2: #7aa7ff;
+      --border: #2a3d5f;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #08111f 0%, #0b1220 55%, #101a2e 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(8, 17, 31, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .brand {
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.3px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      font-size: 14px;
+      flex-wrap: wrap;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: auto;
+    }
+
+    .hero {
+      padding: 90px 0 60px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 8px 14px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--accent);
+      background: rgba(56, 232, 216, 0.08);
+      font-size: 14px;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-size: clamp(38px, 6vw, 70px);
+      line-height: 1.05;
+      margin: 0 0 20px;
+      max-width: 950px;
+    }
+
+    .subtitle {
+      font-size: clamp(18px, 2vw, 24px);
+      color: var(--muted);
+      max-width: 850px;
+      margin-bottom: 28px;
+    }
+
+    .author {
+      font-size: 17px;
+      color: var(--text);
+      margin-bottom: 28px;
+    }
+
+    .author strong {
+      color: var(--accent);
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--card2);
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #06111f;
+      border: none;
+    }
+
+    section {
+      padding: 42px 0;
+    }
+
+    .section-title {
+      font-size: 32px;
+      margin-bottom: 14px;
+      color: var(--accent);
+    }
+
+    .section-desc {
+      color: var(--muted);
+      max-width: 850px;
+      margin-bottom: 26px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: linear-gradient(180deg, var(--card2), var(--card));
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 14px 40px rgba(0,0,0,0.22);
+    }
+
+    .card h3 {
+      color: var(--accent);
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill {
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: rgba(122, 167, 255, 0.12);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    .value-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .value-list li {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 16px;
+      border-radius: 14px;
+      color: var(--muted);
+    }
+
+    .contact-box {
+      background: linear-gradient(135deg, rgba(56,232,216,0.12), rgba(122,167,255,0.12));
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 30px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 7%;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 850px) {
+      .grid, .value-list {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="brand">🔐 Audit Readiness Evidence Binder</div>
+    <div class="nav-links">
+      <a href="#project">Project</a>
+      <a href="#files">Files</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="hero">
+      <div class="tag">Cybersecurity GRC Portfolio Project</div>
+      <h1>Audit Readiness Evidence Binder</h1>
+      <p class="subtitle">
+        Cybersecurity GRC documentation and control evidence project focused on audit readiness,
+        access control governance, vendor risk review, gap analysis, and remediation planning.
+      </p>
+      <p class="author">
+        Created by <strong>América Trujillo</strong> · GitHub: <strong>@ammetb18-create</strong>
+      </p>
+      <p class="subtitle">
+        Legal-trained cybersecurity and GRC candidate focused on risk assessment, compliance documentation,
+        audit readiness, and AI governance.
+      </p>
+      <div class="buttons">
+        <a class="btn primary" href="ADD_LINKEDIN_URL_HERE" target="_blank">Connect on LinkedIn</a>
+        <a class="btn" href="https://github.com/ammetb18-create" target="_blank">View GitHub Profile</a>
+      </div>
+    </section>
+
+    <section id="project">
+      <h2 class="section-title">About the Project</h2>
+      <p class="section-desc">
+        This project presents a practical evidence binder for a growing technology company preparing for
+        a cybersecurity compliance review, customer security assessment, or internal audit.
+      </p>
+      <div class="card">
+        <h3>Project Objective</h3>
+        <p>
+          The objective is to demonstrate how a GRC analyst organizes cybersecurity control evidence,
+          identifies documentation gaps, assigns control ownership, and prepares a company for audit
+          or compliance review.
+        </p>
+      </div>
+    </section>
+
+    <section id="files">
+      <h2 class="section-title">Project Files</h2>
+      <p class="section-desc">
+        Each file represents a realistic GRC documentation artifact that supports audit readiness and control evidence management.
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Company Scenario</h3>
+          <p>Explains the business environment and audit readiness context.</p>
+          <a href="company-scenario.md">View File →</a>
+        </div>
+
+        <div class="card">
+          <h3>Control Inventory</h3>
+          <p>Lists controls, ownership, review frequency, evidence needed, and status.</p>
+          <a href="control-inventory.md">View File →</a>
+        </div>
+
+        <div class="card">
+          <h3>Evidence Request Tracker</h3>
+          <p>Organizes requested evidence, owners, frequency, status, and notes.</p>
+          <a href="evidence-request-tracker.md">View File →</a>
+        </div>
+
+        <div class="card">
+          <h3>Access Control Policy</h3>
+          <p>Documents access control expectations, privileged access, and offboarding requirements.</p>
+          <a href="access-control-policy.md">View File →</a>
+        </div>
+
+        <div class="card">
+          <h3>MFA and Password Policy</h3>
+          <p>Defines authentication, MFA, password, privileged account, and exception requirements.</p>
+          <a href="mfa-password-policy.md">View File →</a>
+        </div>
+
+        <div class="card">
+          <h3>Vendor Risk Questionnaire</h3>
+          <p>Provides third-party cybersecurity and compliance review questions.</p>
+          <a href="vendor-risk-questionnaire.md">View File →</a>
+        </div>
+
+        <div class="card">
+          <h3>Audit Gap Analysis</h3>
+          <p>Identifies missing evidence, documentation gaps, risk level, and recommended actions.</p>
+          <a href="audit-gap-analysis.md">View File →</a>
+        </div>
+
+        <div class="card">
+          <h3>Remediation Plan</h3>
+          <p>Prioritizes corrective actions with owners, timeframes, and success metrics.</p>
+          <a href="remediation-plan.md">View File →</a>
+        </div>
+
+        <div class="card">
+          <h3>Executive Summary</h3>
+          <p>Summarizes findings, recommendations, business value, and GRC analyst perspective.</p>
+          <a href="executive-summary.md">View File →</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2 class="section-title">Skills Demonstrated</h2>
+      <div class="skills">
+        <span class="skill">Audit Readiness</span>
+        <span class="skill">GRC Documentation</span>
+        <span class="skill">Control Evidence Organization</span>
+        <span class="skill">Access Control Governance</span>
+        <span class="skill">Policy Writing</span>
+        <span class="skill">Vendor Risk Review</span>
+        <span class="skill">Gap Analysis</span>
+        <span class="skill">Remediation Planning</span>
+        <span class="skill">Compliance Communication</span>
+        <span class="skill">Executive Reporting</span>
+        <span class="skill">Control Ownership Tracking</span>
+        <span class="skill">Cybersecurity Documentation</span>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Business Value</h2>
+      <ul class="value-list">
+        <li>Improves audit readiness by organizing control evidence and documentation.</li>
+        <li>Supports access control governance and recurring review processes.</li>
+        <li>Identifies evidence gaps before audits or customer security reviews.</li>
+        <li>Strengthens vendor risk management and third-party security review.</li>
+        <li>Creates accountability through control owners, due dates, and remediation tracking.</li>
+        <li>Helps translate cybersecurity controls into business-readable documentation.</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <div class="contact-box">
+        <h2 class="section-title">Contact América Trujillo</h2>
+        <p class="section-desc">
+          For professional inquiries, please connect with me on LinkedIn.
+        </p>
+        <div class="buttons">
+          <a class="btn primary" href="ADD_LINKEDIN_URL_HERE" target="_blank">Connect on LinkedIn</a>
+          <a class="btn" href="https://github.com/ammetb18-create" target="_blank">View GitHub</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Created by América Trujillo | GitHub: @ammetb18-create | Cybersecurity GRC Portfolio Project
+  </footer>
+</body>
+</html>
